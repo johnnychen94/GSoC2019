@@ -3,14 +3,16 @@
 \newcommand{\mailto}[1]{\href{mailto:#1}{\textsuperscript{\Email}}}
 \newcommand{\version}[1]{v$#1$\xspace}
 
+\newcommand{\sname}[1]{\textsf{#1}} % special name
+
 % programming
-\newcommand{\langmatlab}{\textsf{MATLAB}\xspace}
-\newcommand{\langjulia}{\textsf{Julia}\xspace}
-\newcommand{\python}{\textsf{Python}\xspace}
+\newcommand{\langmatlab}{\sname{MATLAB}\xspace}
+\newcommand{\langjulia}{\sname{Julia}\xspace}
+\newcommand{\python}{\sname{Python}\xspace}
 
 % github
-\newcommand{\pullrequest}[3]{\href{https://github.com/#1/#2/pull/#3}{\textsf{#1/#2\##3}}}
-\newcommand{\issue}[3]{\href{https://github.com/#1/#2/pull/#3}{\textsf{#1/#2\##3}}}
+\newcommand{\pullrequest}[3]{\href{https://github.com/#1/#2/pull/#3}{\sname{#1/#2\##3}}}
+\newcommand{\issue}[3]{\href{https://github.com/#1/#2/pull/#3}{\sname{#1/#2\##3}}}
 
 % organization names
 \newcommand{\juliaimages}{JuliaImages}
@@ -18,21 +20,37 @@
 \newcommand{\fluxml}{FluxML}
 
 % julia repository names
-\newcommand{\imagetransformations}{ImageTransformations.jl}
-\newcommand{\images}{Images.jl}
-\newcommand{\flux}{Flux.jl}
+\newcommand{\reponame}[1]{#1}
+\newcommand{\imagetransformations}{\reponame{ImageTransformations.jl}}
+\newcommand{\imagecore}{\reponame{ImageCore.jl}}
+\newcommand{\imageaxes}{\reponame{ImageAxes.jl}}
+\newcommand{\imagemetadata}{\reponame{ImageMetadata.jl}}
+\newcommand{\imagefiltering}{\reponame{ImageFiltering.jl}}
+\newcommand{\imagemorphology}{\reponame{ImageMorphology.jl}}
+\newcommand{\images}{\reponame{Images.jl}}
+\newcommand{\flux}{\reponame{Flux.jl}}
+\newcommand{\jump}{\reponame{JuMP.jl}}
+\newcommand{\gpuarrays}{\reponame{GPUArrays.jl}}
 
 % repository urls
-\newcommand{\gitrepo}[2]{\href{https://github.com/#1/#2}{\textsf{#2}}\xspace}
+\newcommand{\gitrepo}[2]{\href{https://github.com/#1/#2}{\sname{#2}}\xspace}
 \newcommand{\repoimagetransformations}{\gitrepo{\juliaimages}{\imagetransformations}}
 \newcommand{\repodipcode}{\gitrepo{Johnnychen94}{Digital-Image-Processing-Gonzalez}}
 \newcommand{\repodeeplearningtutorial}{\gitrepo{Johnnychen94}{DeepLearning\_Tutorial}}
+\newcommand{\reposcikitimage}{\gitrepo{scikit-image}{scikit-image}}
+\newcommand{\repojump}{\gitrepo{JuliaOpt}{\jump}}
+\newcommand{\repogpuarrays}{\gitrepo{JuliaGPU}{\gpuarrays}}
+\newcommand{\repoimages}{\gitrepo{juliaimages}{\images}}
+
+% other urls
+\newcommand{\matlabimageprocessing}{\href{https://www.mathworks.com/products/image.html}{\sname{MATLAB Image Processing Toolbox}\xspace}}
+\newcommand{\apicomparison}{\href{https://juliaimages.org/latest/api_comparison.html}{api comparison}\xspace}
 
 % ECNU
 \newcommand{\ecnumath}{School of Mathematical Sciences, East China Normal University\xspace}
 
 %% community people
-\newcommand{\gitpeople}[2]{\href{https://github.com/#1}{\textsf{#2}}\xspace}
+\newcommand{\gitpeople}[2]{\href{https://github.com/#1}{\sname{#2}}\xspace}
 \newcommand{\johnnychen}{\gitpeople{Johnnychen94}{Johnny Chen}}
 
 \newcommand{\evizero}{\gitpeople{Evizero}{Evizero}}

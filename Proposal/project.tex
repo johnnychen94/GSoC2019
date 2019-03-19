@@ -1,0 +1,24 @@
+% !TEX root = ./main.tex
+
+\section{Project}\label{sec:project}
+
+\repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \imagecore, \imagetransformations, \imageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage and \matlabimageprocessing.
+
+However, despite of the performance, this toolbox at present is still not friendly to both users and developers. For example:
+
+\begin{itemize}
+    \item there's no demo of \images{} for new users to start with;
+    \item the APIs lacks of consistence;
+    \item there's no style guide on naming and programming;
+    \item there're too many temporary helper functions defined everywhere;
+    \item \images{} is an ecosystem but it lacks of a comprehensive illustration of its packages.
+\end{itemize}
+
+Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users to understand the very details of its mechanism and architecture, and even harder without comprehensive documentation on it. This project aims to solve this confilct by
+
+\begin{itemize}
+    \item providing more comprehensive documentation on both style guide and ecosystem illustration,
+    \item pruning the \images{} codebase according to the provided documentation, and
+\end{itemize}
+
+Basically, this is a project on documentation and code refactoring.
