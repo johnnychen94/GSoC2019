@@ -31,12 +31,11 @@ dicuss the coding styles in the most generic way, and packages such as
 \end{itemize}
 are examples validating the effectiveness of style consensus reached in those issues. In \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 12 methods implemented.} with one unified API: \mint{julia}|binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}|
 
-With these existing work, it's in the right time to revisit the whole \images ecosystem and head towards a more easy-to-use \images package. This project aims to solve this problem by:
+With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package. This project aims to solve this problem by:
 
 \begin{itemize}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration,
-    \item pruning codebase of the ecosystem according to the provided documentation, and
-    \item converting \images{} to an entrance to the ecosystem.
+    \item pruning codebase of the ecosystem according to the provided documentation
 \end{itemize}
 
 Writing demos of \images{} is not included in this project since it belongs to a totally different project. Basically, this is a project on documentation and code refactoring.

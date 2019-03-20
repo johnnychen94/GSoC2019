@@ -1,0 +1,31 @@
+% !TEX root = ./main.tex
+
+\section{Delivery and milestone}\label{sec:delivery}
+
+\todo{I can't estimate the timeline.}
+
+As described in the end of \cref{sec:project}, the project will be delivered in two stages: drafting a style guide in the first stage as a preperation, and cleaning the codebase in the second stage.
+
+\subsection{Documentation and Guide}\label{subsec:documentation}
+
+The main purpose of this stage is to provide trackable documents for the next stage's pruning work. \emph{The documents will be in three forms: ecosystem documentation, developer manual, and RFC}. Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relavent packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Developer manual consists of style guide and best practice as well as other related community-operating rules. According to these two documents, a RFC with a detailed list of API changes and operation will be proposed, which will be stick onto in the next stage's pruning work.
+
+To reach the milestone, following work will be done:
+
+\begin{enumerate}
+    \item dig into the source code of image-processing-related \langjulia packages as well as other mature \langjulia{} packages such as \repojump to filter out good and bad julia programming practices.
+    \item compare the APIs of \images{} with that of \reposcikitimage{} and \matlabimageprocessing{} to find the balance between the native julian style and the familiar style for users from other languages.
+    \item discuss with the cummunity and draft the ecosystem documentation and style guide, define the scope of the ecosystem.
+    \item dig into the source code of \images{} ecosystem, and draft the RFC\footnote{Tensorflow community provides a \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} to begin with, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good example.}
+    \item discuss with the community and make the RFC approved.
+\end{enumerate}
+
+The approval of RFC indicates the end of this stage.
+
+\subsection{Prune Codebase}\label{subsec:prune}
+
+With the RFC approved, the prune stage is to clean the codebase following the RFC operation guide. A milestone will be set in \repoimages{} to track the progress.
+
+60\% completeness rate shall be enough to indicate the end of this stage, since many repositories will be involved in this stage.
+
+\todo{I don't know what should be take care of in this stage}
