@@ -4,7 +4,7 @@
 
 As described in the end of \cref{sec:project}, the project will be delivered in two stages: \textbf{documenting} and \textbf{pruning}.
 
-Documenting and recording in the first stage as a preperation, and cleaning the codebase in the second stage to make real changes to \images{} ecosystem. With regard to GSoC timeline, \textsf{Phase 1} evaluates the documentation work, and \textsf{Phase 2} and \textsf{Final} evaluations focus on the porting stage.
+Documenting and recording in the first stage as a preperation, and cleaning the codebase in the second stage to make real changes to \images{} ecosystem. With regard to GSoC timeline, \textsf{Phase 1} evaluates the documentation work, and \textsf{Phase 2} and \textsf{Final} evaluations focus on the pruning stage.
 
 \subsection{Documenting}\label{subsec:documentation}
 
@@ -18,8 +18,8 @@ There'll be three side effects in this stage:
 
 \begin{itemize}
     \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
-    \item potential bug reports and patches to all \langjulia repositories;
-    \item a new image denoising package, \repoimagenoise, as a concept-validation experimental field.
+    \item potential bug reports and patches to all related \langjulia repositories;
+    \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.
 \end{itemize}
 
 \subsubsection*{Stage Workflow}
@@ -28,7 +28,7 @@ Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GS
 
 From \date{April 22} to \date{June 24}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.}, this stage will continue for ten weeks, which will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}.\par
 
-The discussion period begins from \date{April 22} to \date{June 3} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{June 3} to \date{June 24} (weeks 6 to 9), in this period, one or more RFCs will be drafted and discussed, as well as the detailed porting schedule. Basically, the content of RFCs come from previous discussions. The last week is used for merge and announcement.\par
+The discussion period begins from \date{April 22} to \date{June 9} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9), in this period, one or more RFCs will be drafted and discussed, as well as the detailed porting schedule. Basically, the content of RFCs come from previous discussions. The last week is used for evaluation, merge and announcement.\par
 
 With a quick discussion among the community, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall be the fundamental principle to all future discussion. The current \images{} maintainer, i.e., \timholy, is supposed to participate\footnote{In case of maintainer being busy on other work, the author will draft a document based on my understanding and post it to the community.}.\par
 
@@ -36,17 +36,18 @@ Many discussions will happen simultaneously in the following way:
 \begin{enumerate}
     \item \textbf{Code Review:} dig into source codes of repositories of images ecosystem to find anything that's likely in need of changing. Other mature \langjulia{} packages, and image-processing libraries in other languages such as \reposcikitimage{} and \matlabimageprocessing{} are references.
     \item \textbf{Issue Open:} open an issue for anything that is worth a discussion, e.g., legacy codes, misplaced codes, codes with bad practice, and undocumented practices and decisions.
-    \item \textbf{Decision Make:} the purpose of discussion is to make decision on API and practice. The conventional principles are taken: a decision is made when consensus is reached, otherwise the current maintainer of \images{}, i.e., \timholy , make the decision. If a decision can't be made before June 17 (Week 8), it's dropped as future work.
+    \item \textbf{Decision Make:} the purpose of discussion is to make decision on API and practice. The conventional principles are taken: a decision is made when consensus is reached, otherwise the current maintainer of \images{} make the decision. If a decision can't be made before June 16 (Week 8), it'll be dropped as future work.
     \item \textbf{Record:} all approved, rejected and future-work proposals will be documented in a temporary repository - \repogsoctempdoc{}. Developer manual will be drafted to \repoimagesgithubio{} when there're enough decisions made.
 \end{enumerate}
 
-RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community,  \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} will also happen simultaneously in the following way:
+RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} will also happen simultaneously in the following way:
 \begin{enumerate}
     \item \textbf{Code Review:} for each approved proposal, find all involved code pieces, and give a solution to it according to developer's manual. The principle of code review is to rigorously sticking to decisions made in the discussion period -- either there's one principle or no principle.
     \item \textbf{RFC Post:} post the draft-version of RFC in \repogsoctempdoc{}.
     \item \textbf{Discuss:} if there's any issue with any item in the proposed RFC, suspend the related items and go back to the discussion workflow until a decision is made.
-    \item \textbf{Merge and Announcement:} RFC merge and Announcement will only happen in last week in case there're more to be added.
+    \item \textbf{Merge and Announcement:} RFC merge and announcement will only happen in last two week in case there're more items to be added.
 \end{enumerate}
+Details on porting operation will be in \cref{subsec:prune}.
 
 \subsubsection*{Stage Evaluation}
 
@@ -59,10 +60,22 @@ Four items are evaluated during this stage, i.e., \textsf{Phase 1 Evaluation}:
 \end{itemize}
 A score of 6/10 stands for \textsf{Evaluation Pass}.
 
-\subsection{Prune Codebase}\label{subsec:prune}
+\subsection{Pruning Codebase(WIP)}\label{subsec:prune}
 
+\subsubsection*{Stage Expectations}
 With the RFC approved, the prune stage is to clean the codebase following the RFC operation guide. A milestone will be set in \repoimages{} to track the progress.
 
-60\% completeness rate shall be enough to indicate the end of this stage, since many repositories will be involved in this stage.
+\subsubsection*{Stage Workflow}
 
-\todo{I don't know what should be take care of in this stage}
+Todolist:
+
+\todo{how to take care of API changes and function moving?}
+
+\todo{What part of porting work should be take?}
+
+\todo{How to deal with WIP?}
+
+\todo{How to deal with backward compatibility?}
+
+\subsubsection*{Stage Evaluation}
+60\% completeness rate shall be enough to indicate the end of this stage, since many repositories will be involved in this stage.
