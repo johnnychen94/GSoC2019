@@ -1,26 +1,63 @@
 % !TEX root = ./main.tex
 
-\section{Delivery and milestone}\label{sec:delivery}
+\section{Delivery Schedule}\label{sec:delivery}
 
-\todo{I can't estimate the timeline.}
+As described in the end of \cref{sec:project}, the project will be delivered in two stages: \textbf{documenting} and \textbf{pruning}.
 
-As described in the end of \cref{sec:project}, the project will be delivered in two stages: drafting a style guide in the first stage as a preperation, and cleaning the codebase in the second stage.
+Documenting and recording in the first stage as a preperation, and cleaning the codebase in the second stage to make real changes to \images{} ecosystem. With regard to GSoC timeline, \textsf{Phase 1} evaluates the documentation work, and \textsf{Phase 2} and \textsf{Final} evaluations focus on the porting stage.
 
-\subsection{Documentation and Guide}\label{subsec:documentation}
+\subsection{Documenting}\label{subsec:documentation}
 
-The main purpose of this stage is to provide trackable documents for the next stage's pruning work. \emph{The documents will be in three forms: ecosystem documentation, developer manual, and RFC}. Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relavent packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Developer manual consists of style guide and best practice as well as other related community-operating rules. According to these two documents, a RFC with a detailed list of API changes and operation will be proposed, which will be stick onto in the next stage's pruning work.
+\subsubsection*{Stage Expectations}
 
-To reach the milestone, following work will be done:
+The main purpose of this stage is to provide trackable records for the next stage's pruning work. There'll be three types of records: \textbf{ecosystem documentation}, \textbf{developer manual}, and \textbf{RFCs} (Request For Comments). \par
 
+Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relevant packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Developer manual consists of style guide and best practice as well as other related community-operating rules, it gives a documented reference to developers to solve potential conflicts. RFCs with detailed list of API changes and porting operation will be proposed as trackable records for the pruning work in next stage. \par
+
+There'll be three side effects in this stage:
+
+\begin{itemize}
+    \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
+    \item potential bug reports and patches to all \langjulia repositories;
+    \item a new image denoising package, \repoimagenoise, as a concept-validation experimental field.
+\end{itemize}
+
+\subsubsection*{Stage Workflow}
+
+Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GSoC timeline. However, since a lot of repositories will be involved in this project, which makes the timeline hard to be sticked to, the timeline serves in a flexible way.\par
+
+From \date{April 22} to \date{June 24}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.}, this stage will continue for ten weeks, which will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}.\par
+
+The discussion period begins from \date{April 22} to \date{June 3} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{June 3} to \date{June 24} (weeks 6 to 9), in this period, one or more RFCs will be drafted and discussed, as well as the detailed porting schedule. Basically, the content of RFCs come from previous discussions. The last week is used for merge and announcement.\par
+
+With a quick discussion among the community, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall be the fundamental principle to all future discussion. The current \images{} maintainer, i.e., \timholy, is supposed to participate\footnote{In case of maintainer being busy on other work, the author will draft a document based on my understanding and post it to the community.}.\par
+
+Many discussions will happen simultaneously in the following way:
 \begin{enumerate}
-    \item dig into the source code of image-processing-related \langjulia packages as well as other mature \langjulia{} packages such as \repojump to filter out good and bad julia programming practices.
-    \item compare the APIs of \images{} with that of \reposcikitimage{} and \matlabimageprocessing{} to find the balance between the native julian style and the familiar style for users from other languages.
-    \item discuss with the cummunity and draft the ecosystem documentation and style guide, define the scope of the ecosystem.
-    \item dig into the source code of \images{} ecosystem, and draft the RFC\footnote{Tensorflow community provides a \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} to begin with, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good example.}
-    \item discuss with the community and make the RFC approved.
+    \item \textbf{Code Review:} dig into source codes of repositories of images ecosystem to find anything that's likely in need of changing. Other mature \langjulia{} packages, and image-processing libraries in other languages such as \reposcikitimage{} and \matlabimageprocessing{} are references.
+    \item \textbf{Issue Open:} open an issue for anything that is worth a discussion, e.g., legacy codes, misplaced codes, codes with bad practice, and undocumented practices and decisions.
+    \item \textbf{Decision Make:} the purpose of discussion is to make decision on API and practice. The conventional principles are taken: a decision is made when consensus is reached, otherwise the current maintainer of \images{}, i.e., \timholy , make the decision. If a decision can't be made before June 17 (Week 8), it's dropped as future work.
+    \item \textbf{Record:} all approved, rejected and future-work proposals will be documented in a temporary repository - \repogsoctempdoc{}. Developer manual will be drafted to \repoimagesgithubio{} when there're enough decisions made.
 \end{enumerate}
 
-The approval of RFC indicates the end of this stage.
+RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community,  \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} will also happen simultaneously in the following way:
+\begin{enumerate}
+    \item \textbf{Code Review:} for each approved proposal, find all involved code pieces, and give a solution to it according to developer's manual. The principle of code review is to rigorously sticking to decisions made in the discussion period -- either there's one principle or no principle.
+    \item \textbf{RFC Post:} post the draft-version of RFC in \repogsoctempdoc{}.
+    \item \textbf{Discuss:} if there's any issue with any item in the proposed RFC, suspend the related items and go back to the discussion workflow until a decision is made.
+    \item \textbf{Merge and Announcement:} RFC merge and Announcement will only happen in last week in case there're more to be added.
+\end{enumerate}
+
+\subsubsection*{Stage Evaluation}
+
+Four items are evaluated during this stage, i.e., \textsf{Phase 1 Evaluation}:
+\begin{itemize}
+    \item 2/10: issues activity
+    \item 2/10: ecosystem documentation
+    \item 3/10: developer manual
+    \item 3/10: RFCs
+\end{itemize}
+A score of 6/10 stands for \textsf{Evaluation Pass}.
 
 \subsection{Prune Codebase}\label{subsec:prune}
 
