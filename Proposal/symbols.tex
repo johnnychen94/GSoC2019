@@ -1,6 +1,7 @@
 % !TEX root = ./main.tex
 
 \newcommand{\todo}[1]{\textcolor{red}{ TODO: (#1)}}
+\newcommand{\ask}[1]{\textcolor{red}{ Question: #1}\par}
 
 \newcommand{\mailto}[1]{\href{mailto:#1}{\textsuperscript{\Email}}}
 \newcommand{\version}[1]{v$#1$\xspace}
@@ -20,6 +21,7 @@
 \newcommand{\juliaimages}{JuliaImages}
 \newcommand{\julialang}{JuliaLang}
 \newcommand{\fluxml}{FluxML}
+\newcommand{\juliamath}{JuliaMath}
 
 % julia repository names
 \newcommand{\reponame}[1]{#1}
@@ -29,6 +31,7 @@
 \newcommand{\imagemetadata}{\reponame{ImageMetadata.jl}}
 \newcommand{\imagefiltering}{\reponame{ImageFiltering.jl}}
 \newcommand{\imagemorphology}{\reponame{ImageMorphology.jl}}
+\newcommand{\imagetracking}{\reponame{ImageTracking.jl}}
 \newcommand{\images}{\reponame{Images.jl}}
 \newcommand{\flux}{\reponame{Flux.jl}}
 \newcommand{\jump}{\reponame{JuMP.jl}}
@@ -37,13 +40,23 @@
 \newcommand{\imagebinarization}{\reponame{ImageBinarization.jl}}
 \newcommand{\histogramthresholding}{\reponame{HistogramThresholding.jl}}
 \newcommand{\imagenoise}{\reponame{ImageNoise.jl}}
+\newcommand{\imagedistance}{\reponame{ImageDistances.jl}}
 \newcommand{\imagesgithubio}{\reponame{juliaimages.github.io}}
+\newcommand{\testimages}{\reponame{TestImages.jl}}
+\newcommand{\fixedpointnumbers}{\reponame{FixedPointNumbers.jl}}
+\newcommand{\imageinpainting}{\reponame{ImageInpainting.jl}}
+\newcommand{\imageview}{\reponame{ImageView.jl}}
+
 
 % repository urls
 \newcommand{\gitrepo}[2]{\href{https://github.com/#1/#2}{\sname{#2}}\xspace}
 \newcommand{\repoimagetransformations}{\gitrepo{\juliaimages}{\imagetransformations}}
 \newcommand{\repoimagecore}{\gitrepo{\juliaimages}{\imagecore}}
 \newcommand{\repoimageaxes}{\gitrepo{\juliaimages}{\imageaxes}}
+\newcommand{\repoimagemetadata}{\gitrepo{\juliaimages}{\imagemetadata}}
+\newcommand{\repoimagefiltering}{\gitrepo{\juliaimages}{\imagefiltering}}
+\newcommand{\repoimagemorphology}{\gitrepo{\juliaimages}{\imagemorphology}}
+\newcommand{\repoimagetracking}{\gitrepo{\juliaimages}{\imagetracking}}
 \newcommand{\repodipcode}{\gitrepo{Johnnychen94}{Digital-Image-Processing-Gonzalez}}
 \newcommand{\repodeeplearningtutorial}{\gitrepo{Johnnychen94}{DeepLearning\_Tutorial}}
 \newcommand{\reposcikitimage}{\gitrepo{scikit-image}{scikit-image}}
@@ -56,11 +69,17 @@
 \newcommand{\repoimagenoise}{\gitrepo{johnnychen94}{\imagenoise}}
 \newcommand{\repoimagesgithubio}{\gitrepo{\juliaimages}{juliaimages.github.io}}
 \newcommand{\repogsoctempdoc}{\gitrepo{johnnychen94}{GSoC2019\_Document}}
+\newcommand{\repoimagedistance}{\gitrepo{\juliaimages}{\imagedistance}}
+\newcommand{\repotestimages}{\gitrepo{\juliaimages}{\testimages}}
+\newcommand{\repofixedpointnumbers}{\gitrepo{\juliamath}{\fixpointnumbers}}
+\newcommand{\repoimageinpainting}{\gitrepo{\juliaimages}{\imageinpainting}}
+\newcommand{\repoimageview}{\gitrepo{\juliaimages}{\imageview}}
 
 
 % other urls
 \newcommand{\matlabimageprocessing}{\href{https://www.mathworks.com/products/image.html}{\sname{MATLAB Image Processing Toolbox}\xspace}}
 \newcommand{\apicomparison}{\href{https://juliaimages.org/latest/api_comparison.html}{api comparison}\xspace}
+\newcommand{\semanticversion}{\href{https://semver.org/}{Semantic Versioning}}
 
 % ECNU
 \newcommand{\ecnumath}{School of Mathematical Sciences, East China Normal University\xspace}

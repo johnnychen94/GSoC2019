@@ -1,43 +1,54 @@
 % !TEX root = ./main.tex
 
-\section{Project Introduction}\label{sec:project}
+\section{Project Description}\label{sec:project}
 
-\repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \repoimagecore, \repoimagetransformations, \repoimageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage and \matlabimageprocessing.
+\repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \repoimagecore, \repoimagetransformations, \repoimageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
-However, despite of the performance, this toolbox at present is still not friendly to both users and developers; Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users to understand the very details of its mechanism and architecture, and this is even harder for them without comprehensive documentation on it. Under this circumstance, most image-processing researchers are still using \langpython and \langmatlab for their daily work.
+However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, most image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
 Some apparent causes for its poor usability are:
 \begin{itemize}
-    \item there's few demos or recipes in \images{} for new users to start with;
+    \item there're few demos or recipes in \images{} for new users to start with;
     \item the APIs lack of consistence and don't match the julian style well;
-    \item there's no style guide on naming and programming;
+    \item there's no image-processing-specific style guide on naming and programming, except the \langjulia{} \href{https://docs.julialang.org/en/v1/manual/style-guide/}{style guide};
     \item there're too many temporary helper functions defined everywhere;
     \item \images{} is an ecosystem but it lacks of a comprehensive illustration of its packages;
     \item coverage of trait functions are not fully tested.
 \end{itemize}
 Fundamentally this is because that it is still in the progress of finding the most suitable programming style to process images using \langjulia.
 
-Fortunately this problem is well-concerned in the community. Issues such as
+Fortunately the problem is well-concerned in the community. Issues such as
 \begin{itemize}
-    \item \issue{\juliaimages}{\images}{766}
-    \item \issue{\juliaimages}{\images}{767}
-    \item \issue{\juliaimages}{\images}{772}
-    \item \issue{zygmuntszpak}{\imagebinarization}{23}
+    \item \issue{\juliaimages}{\imagecore}{63} and \issue{\juliamath}{\fixedpointnumbers}{41} -- how to deal with overflow behavior of default \mintinline{julia}{N0f8} type?
+    \item \issue{\juliaimages}{\images}{766} -- Use \mintinline{julia}{channelview} as possible as we can?
+    \item \issue{\juliaimages}{\images}{767} -- Towards consistent style, part 1: a naming guide
+    \item \issue{\juliaimages}{\images}{772} -- Revisiting the Images API
+    \item \issue{zygmuntszpak}{\imagebinarization}{23} -- What's the appropriate argument order?
+    \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
 \end{itemize}
-dicuss the coding styles in the most generic way, and packages such as
-\begin{itemize}
-    \item \repohistogramthresholding
-    \item \repoimagebinarization
-\end{itemize}
-are examples validating the effectiveness of style consensus reached in those issues. In \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 12 methods implemented.} with one unified API: \mint{julia}|binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}|
+discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 12 methods implemented.} with one unified API:
+\mint{julia}{binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}}
 
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package. This project aims to solve this problem by:
-
-\begin{itemize}
+\begin{enumerate}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration,
     \item pruning codebase of the ecosystem according to the provided documentation
+\end{enumerate}
+Writing demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be examined carefully to support high-level API design.
+
+Basically, this is a project on documentation and code refactoring, and it is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:
+\begin{itemize}
+    \item \textbf{user entrance:} \repoimages
+    \item \textbf{core packages:} \repoimagecore, \repoimageaxes and \repoimagemetadata
+    \item \textbf{application packages:} \repoimagemorphology, \repoimagetransformations, \repoimagedistance and \repoimagefiltering
+    \item \textbf{new packages\footnote{These packages are not yet imported by \images.}:} \repoimagebinarization, \repohistogramthresholding, \repoimageinpainting
 \end{itemize}
+High-level packages (e.g., \repoimagetracking) and ploting packages (e.g., \repoimageview) are not under consideration of this project.\par
 
-Writing demos of \images{} is not included in this project since it belongs to a totally different project. Basically, this is a project on documentation and code refactoring.
-
-\todo{How many packages will be involved in this project?}
+This project will have many side effects:
+\begin{itemize}
+    \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
+    \item potential bug reports and patches to all related \langjulia repositories;
+    \item introduction of a new image processing packages, \sname{ImageEdge.jl}, to place legacy methods in \images
+    \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}
+\end{itemize}
