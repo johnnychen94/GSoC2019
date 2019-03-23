@@ -4,12 +4,12 @@
 
 \repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \repoimagecore, \repoimagetransformations, \repoimageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
-However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, most image-processing researchers are still using \langpython and \langmatlab for their daily work.
+However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, many image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
 Some apparent causes for its poor usability are:
 \begin{itemize}
     \item there're few demos or recipes in \images{} for new users to start with;
-    \item the APIs lack of consistence and don't match the julian style well;
+    \item the API varies greatly across Images.jl submodules, and can be unintuitive to the non-experts;
     \item there's no image-processing-specific style guide on naming and programming, except the \langjulia{} \href{https://docs.julialang.org/en/v1/manual/style-guide/}{style guide};
     \item there're too many temporary helper functions defined everywhere;
     \item \images{} is an ecosystem but it lacks of a comprehensive illustration of its packages;
