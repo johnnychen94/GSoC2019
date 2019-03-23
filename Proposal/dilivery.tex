@@ -14,25 +14,15 @@ The main purpose of this stage is to provide trackable records for the next stag
 
 Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relevant packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Developer manual consists of style guide and best practice as well as other related community-operating rules, it gives a documented reference to developers to solve potential conflicts. RFCs with detailed list of API changes and porting operation will be proposed as trackable records for the pruning work in next stage. \par
 
-There'll be three side effects in this stage:
-
-\begin{itemize}
-    \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
-    \item potential bug reports and patches to all related \langjulia repositories;
-    \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.
-\end{itemize}
-
 \subsubsection*{Stage Workflow}
 
-Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GSoC timeline. However, since a lot of repositories will be involved in this project, which makes the timeline hard to be sticked to, the timeline serves in a flexible way.\par
+From \date{April 22} to \date{June 24}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.}, this stage will continue for ten weeks, which will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}. Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GSoC timeline. However, since a lot of repositories will be involved in this project, which makes the timeline hard to be sticked to, the timeline serves in a flexible way.\par
 
-From \date{April 22} to \date{June 24}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.}, this stage will continue for ten weeks, which will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}.\par
+The discussion period begins from \date{April 22} to \date{June 9} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9), one or more RFCs will be drafted and discussed in this period. Basically, the content of RFCs come from previous discussions. The last week of this stage is used for evaluation, merge and announcement.\par
 
-The discussion period begins from \date{April 22} to \date{June 9} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9), in this period, one or more RFCs will be drafted and discussed, as well as the detailed porting schedule. Basically, the content of RFCs come from previous discussions. The last week is used for evaluation, merge and announcement.\par
+With a quick discussion among the community, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall be the fundamental principle to all future discussion. Ideally, the current \images{} maintainer, i.e., \timholy, is supposed to participate\footnote{In case of maintainer being busy on other work, the author will draft a document based on his understanding and post it to the maintainer to get a feedback.}.\par
 
-With a quick discussion among the community, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall be the fundamental principle to all future discussion. The current \images{} maintainer, i.e., \timholy, is supposed to participate\footnote{In case of maintainer being busy on other work, the author will draft a document based on my understanding and post it to the community.}.\par
-
-Many discussions will happen simultaneously in the following way:
+From weeks 1 to 7, many discussions will happen simultaneously in the following way:
 \begin{enumerate}
     \item \textbf{Code Review:} dig into source codes of repositories of images ecosystem to find anything that's likely in need of changing. Other mature \langjulia{} packages, and image-processing libraries in other languages such as \reposcikitimage{} and \matlabimageprocessing{} are references.
     \item \textbf{Issue Open:} open an issue for anything that is worth a discussion, e.g., legacy codes, misplaced codes, codes with bad practice, and undocumented practices and decisions.
@@ -40,42 +30,59 @@ Many discussions will happen simultaneously in the following way:
     \item \textbf{Record:} all approved, rejected and future-work proposals will be documented in a temporary repository - \repogsoctempdoc{}. Developer manual will be drafted to \repoimagesgithubio{} when there're enough decisions made.
 \end{enumerate}
 
-RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} will also happen simultaneously in the following way:
+From weeks 6 to 9, RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} will happen simultaneously in the following way:
 \begin{enumerate}
     \item \textbf{Code Review:} for each approved proposal, find all involved code pieces, and give a solution to it according to developer's manual. The principle of code review is to rigorously sticking to decisions made in the discussion period -- either there's one principle or no principle.
     \item \textbf{RFC Post:} post the draft-version of RFC in \repogsoctempdoc{}.
     \item \textbf{Discuss:} if there's any issue with any item in the proposed RFC, suspend the related items and go back to the discussion workflow until a decision is made.
-    \item \textbf{Merge and Announcement:} RFC merge and announcement will only happen in last two week in case there're more items to be added.
+    \item \textbf{Merge and Announcement:} RFCs will be merged to a new folder in \repoimagesgithubio{} and be announced to the community via slack and discourse. RFC merge and announcement will only happen in last two weeks in case there're more items to be added.
 \end{enumerate}
-Details on porting operation will be in \cref{subsec:prune}.
+RFC details on how codebase is pruned will be in \cref{subsec:prune}.
 
 \subsubsection*{Stage Evaluation}
 
 Four items are evaluated during this stage, i.e., \textsf{Phase 1 Evaluation}:
 \begin{itemize}
-    \item 2/10: issues activity
+    \item 2/10: activity on issues and discussions
     \item 2/10: ecosystem documentation
     \item 3/10: developer manual
     \item 3/10: RFCs
 \end{itemize}
 A score of 6/10 stands for \textsf{Evaluation Pass}.
 
-\subsection{Pruning Codebase(WIP)}\label{subsec:prune}
+\subsection{Pruning Codebase}\label{subsec:prune}
+After the RFCs being merged and announced to the community, the pruning stage begins.
 
 \subsubsection*{Stage Expectations}
-With the RFC approved, the prune stage is to clean the codebase following the RFC operation guide. A milestone will be set in \repoimages{} to track the progress.
+
+The pruning stage is to clean the codebase according to the RFC operation guide. There'll be three types of pruning work:
+\begin{itemize}
+    \item symbol renaming, move, and removal
+    \item API changes
+    \item API enhancement
+\end{itemize}
+For the ease of tracking the progress, a milestone will be set in \repoimages{} to track the progress, each pruning PR/issue will be assigned a tag. \par
+
+Challenges during this stage are: backward incompatibility, and complex package dependencies. The next section will be strategies to this challenges. \par
 
 \subsubsection*{Stage Workflow}
 
-Todolist:
+One principle of the pruning work is to start from packages with the least dependencies to that with the most dependencies. In this project, we do from core packages (e.g., \repoimagecore{}), to application packages (e.g., \repoimagetransformations{}), and finally to the user-entrance package, i.e., \repoimages{}.\par
 
-\todo{how to take care of API changes and function moving?}
+\ask{Should all the pruning work happen in a seperate branch other than \sname{master} branch?}
 
-\todo{What part of porting work should be take?}
+\newcommand{\packageA}{package \sname{A}\xspace}
+\newcommand{\packageB}{package \sname{B}\xspace}
 
-\todo{How to deal with WIP?}
-
-\todo{How to deal with backward compatibility?}
+Porting methods from package \packageA to \packageB takes the following routine:
+\begin{enumerate}
+    \item implement new methods and unit tests in \packageB, bump a \sname{patch}\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version to \packageB,
+    \item in \packageA, move methods to a seperate \mintinline{julia}{deprecated.jl} file and deprecate them, bump a \sname{patch} version to \packageA,
+    \item wait for one month for exported symbols to give downstream packages time to replace with new symbols,
+    \item in \packageA, delete the deprecated files, bump a \sname{minor} version to \packageA
+\end{enumerate}
+Steps 1-2 will be done as a part of this project, and steps 3-4 will be future work.
 
 \subsubsection*{Stage Evaluation}
-60\% completeness rate shall be enough to indicate the end of this stage, since many repositories will be involved in this stage.
+
+With regard to GSoC timeline, this stage includes the \sname{Phase 2} and \sname{Phase final} evaluations. The \sname{Phase 2} evaluation shall focus on checking if the pruning work begins as expected, and the \sname{Phase final} evaluation shall focus on the milestone progress.
