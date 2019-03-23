@@ -2,7 +2,7 @@
 
 \section{Project Description}\label{sec:project}
 
-\repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \repoimagecore, \repoimagetransformations, \repoimageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
+\repoimages{} is a \langjulia image-processing toolbox that provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
 However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, many image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
@@ -31,8 +31,8 @@ discuss the coding styles and programming practice in the most generic way. Pack
 
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package. This project aims to solve this problem by:
 \begin{enumerate}
-    \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration,
-    \item pruning codebase of the ecosystem according to the provided documentation
+    \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and drafting RFCs
+    \item pruning codebase of the ecosystem according to the drafted RFCs
 \end{enumerate}
 Writing demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be examined carefully to support high-level API design.
 
@@ -45,10 +45,11 @@ Basically, this is a project on documentation and code refactoring, and it is al
 \end{itemize}
 High-level packages (e.g., \repoimagetracking) and ploting packages (e.g., \repoimageview) are not under consideration of this project.\par
 
-This project will have many side effects:
+While doing the documentation and code refactoring work, this project will have many side effects:
 \begin{itemize}
     \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
     \item potential bug reports and patches to all related \langjulia repositories;
     \item introduction of a new image processing packages, \sname{ImageEdge.jl}, to place legacy methods in \images
     \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}
 \end{itemize}
+Note that these side effects are not included as a part of this project.

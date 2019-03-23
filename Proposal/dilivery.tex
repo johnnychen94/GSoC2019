@@ -77,9 +77,9 @@ In this stage, the workflow of pruning work is:
 \newcommand{\packageA}{package \sname{A}\xspace}
 \newcommand{\packageB}{package \sname{B}\xspace}
 \begin{enumerate}
-    \item create a separate branch in each involved repositories
+    \item create a separate branch \sname{api-prune} in each involved repositories
     \item port all methods and symbols in separate branches -- backward incompatible
-    \item merge into master, tag a minor\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version
+    \item merge into \sname{master}, tag a minor\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version
     \item freeze minor version for one or two months to let downstream packages upgrade their codebase. In the meantime, do backward compatible API enhancement
     \item remove deprecated symbols, methods and their tests, tag a minor version
 \end{enumerate}
