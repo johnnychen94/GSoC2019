@@ -4,7 +4,7 @@
 
 \repoimages{} is a \langjulia image-processing toolbox, including several packages such as: \repoimagecore, \repoimagetransformations, \repoimageaxes. It provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
-However, despite of the performance, this toolbox at present is still not friendly to both users and developers; unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, most image-processing researchers are still using \langpython and \langmatlab for their daily work.
+However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, most image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
 Some apparent causes for its poor usability are:
 \begin{itemize}
@@ -30,10 +30,10 @@ discuss the coding styles and programming practice in the most generic way. Pack
 \mint{julia}{binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}}
 
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package. This project aims to solve this problem by:
-\begin{itemize}
+\begin{enumerate}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration,
     \item pruning codebase of the ecosystem according to the provided documentation
-\end{itemize}
+\end{enumerate}
 Writing demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be examined carefully to support high-level API design.
 
 Basically, this is a project on documentation and code refactoring, and it is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:

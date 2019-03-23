@@ -2,9 +2,9 @@
 
 \section{Delivery Schedule}\label{sec:delivery}
 
-As described in the end of \cref{sec:project}, the project will be delivered in two stages: \textbf{documenting} and \textbf{pruning}.
+As described in the end of \cref{sec:project}, the project will be delivered in two stages: \textbf{documenting} and \textbf{pruning}. Documenting and recording in the first stage as a preperation, and cleaning the codebase in the second stage to make real changes to \images{} ecosystem.
 
-Documenting and recording in the first stage as a preperation, and cleaning the codebase in the second stage to make real changes to \images{} ecosystem. With regard to GSoC timeline, \textsf{Phase 1} evaluates the documentation work, and \textsf{Phase 2} and \textsf{Final} evaluations focus on the pruning stage.
+With regard to GSoC timeline, \textsf{Phase 1} evaluates the documentation work, and \textsf{Phase 2} and \textsf{Final} evaluations focus on the pruning stage. Documenting stage begins from \date{April 22}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.} to \date{June 24} (weeks 1-10), and pruning stage start from \date{July 1} to \date{August 26} (weeks 11-21). Week 10 serves as a buffer week.
 
 \subsection{Documenting}\label{subsec:documentation}
 
@@ -12,15 +12,17 @@ Documenting and recording in the first stage as a preperation, and cleaning the 
 
 The main purpose of this stage is to provide trackable records for the next stage's pruning work. There'll be three types of records: \textbf{ecosystem documentation}, \textbf{developer manual}, and \textbf{RFCs} (Request For Comments). \par
 
-Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relevant packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Developer manual consists of style guide and best practice as well as other related community-operating rules, it gives a documented reference to developers to solve potential conflicts. RFCs with detailed list of API changes and porting operation will be proposed as trackable records for the pruning work in next stage. \par
+Ecosystem documentation illustrates the scope of image ecosystem and relationships between different relevant packages, it helps users and developers to understand what package belongs to \images{} and what package doesn't. Consisting of style guide, best practice as well as other related community-operating rules, developer manual gives a documented reference to developers to solve potential conflicts. RFCs with detailed list of API changes and porting operation will be proposed as trackable records for the pruning work in next stage. \par
 
 \subsubsection*{Stage Workflow}
 
-From \date{April 22} to \date{June 24}\footnote{Although the coding officially begins from \date{May 27}, the author will start this project when he's available.}, this stage will continue for ten weeks, which will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}. Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GSoC timeline. However, since a lot of repositories will be involved in this project, which makes the timeline hard to be sticked to, the timeline serves in a flexible way.\par
+This stage will be divided into two periods: \textbf{discussion period} and \textbf{RFC drafting period}. Ideally, this stage ends after the \textsf{Phase 1 Evaluation} with regard to GSoC timeline. However, since a lot of repositories will be involved in this project, which makes the timeline hard to be sticked to, the timeline serves in a flexible way.\par
 
-The discussion period begins from \date{April 22} to \date{June 9} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices. Documenting work will be included in this period as well. The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9), one or more RFCs will be drafted and discussed in this period. Basically, the content of RFCs come from previous discussions. The last week of this stage is used for evaluation, merge and announcement.\par
+The discussion period begins from \date{April 22} to \date{June 9} (weeks 1 to 7). In this period the community will share ideas and thoughts on the future of APIs and on best practices.\par
 
-With a quick discussion among the community, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall be the fundamental principle to all future discussion. Ideally, the current \images{} maintainer, i.e., \timholy, is supposed to participate\footnote{In case of maintainer being busy on other work, the author will draft a document based on his understanding and post it to the maintainer to get a feedback.}.\par
+In the beginning of the descussion period, an ecosystem documentation will be add to \repoimagesgithubio{} as soon as possible to reach a consensus on the future of \images{}, this consensus shall serve as the fundamental principle to all future discussion and development. Ideally, the current \images{} maintainer, i.e., \timholy, is supposed to participate in.\footnote{In case of maintainer being busy on other work, the author will draft a document based on his understanding and post it to the maintainer to get a feedback.}\par
+
+The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9), one or more RFCs will be drafted and discussed in this period. Basically, the content of RFCs come from previous discussions. The last week of this stage is used for evaluation, merge and announcement.\par
 
 From weeks 1 to 7, many discussions will happen simultaneously in the following way:
 \begin{enumerate}
@@ -49,9 +51,10 @@ Four items are evaluated during this stage, i.e., \textsf{Phase 1 Evaluation}:
     \item 3/10: RFCs
 \end{itemize}
 A score of 6/10 stands for \textsf{Evaluation Pass}.
+% end of subsection
 
 \subsection{Pruning Codebase}\label{subsec:prune}
-After the RFCs being merged and announced to the community, the pruning stage begins.
+After the RFCs being merged and announced to the community, the pruning stage begins. Ideally, this stage begins from \date{July 1} to \date{August 26} (10 weeks).
 
 \subsubsection*{Stage Expectations}
 
@@ -61,7 +64,7 @@ The pruning stage is to clean the codebase according to the RFC operation guide.
     \item API changes
     \item API enhancement
 \end{itemize}
-For the ease of tracking the progress, a milestone will be set in \repoimages{} to track the progress, each pruning PR/issue will be assigned a tag. \par
+For the ease of tracking the progress, a milestone will be set in \repoimages{} to track the progress, and each pruning PR/issue will be assigned a tag. \par
 
 Challenges during this stage are: backward incompatibility, and complex package dependencies. The next section will be strategies to this challenges. \par
 
@@ -69,20 +72,25 @@ Challenges during this stage are: backward incompatibility, and complex package 
 
 One principle of the pruning work is to start from packages with the least dependencies to that with the most dependencies. In this project, we do from core packages (e.g., \repoimagecore{}), to application packages (e.g., \repoimagetransformations{}), and finally to the user-entrance package, i.e., \repoimages{}.\par
 
-\ask{Should all the pruning work happen in a seperate branch other than \sname{master} branch?}
+In this stage, the workflow of pruning work is:
 
 \newcommand{\packageA}{package \sname{A}\xspace}
 \newcommand{\packageB}{package \sname{B}\xspace}
-
-Porting methods from package \packageA to \packageB takes the following routine:
 \begin{enumerate}
-    \item implement new methods and unit tests in \packageB, bump a \sname{patch}\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version to \packageB,
-    \item in \packageA, move methods to a seperate \mintinline{julia}{deprecated.jl} file and deprecate them, bump a \sname{patch} version to \packageA,
-    \item wait for one month for exported symbols to give downstream packages time to replace with new symbols,
-    \item in \packageA, delete the deprecated files, bump a \sname{minor} version to \packageA
+    \item create a separate branch in each involved repositories
+    \item port all methods and symbols in separate branches -- backward incompatible
+    \item merge into master, tag a minor\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version
+    \item freeze minor version for one or two months to let downstream packages upgrade their codebase. In the meantime, do backward compatible API enhancement
+    \item remove deprecated symbols, methods and their tests, tag a minor version
 \end{enumerate}
-Steps 1-2 will be done as a part of this project, and steps 3-4 will be future work.
+Steps 1-3 will be done as a part of GSoC project, and steps 4-5 will be future work. Porting methods from package \packageA to \packageB takes the following routine:
+\begin{enumerate}
+    \item implement new methods and unit tests in \packageB
+    \item in \packageA, move methods to a separate \mintinline{julia}{deprecated.jl} file and deprecate them
+\end{enumerate}
 
 \subsubsection*{Stage Evaluation}
 
-With regard to GSoC timeline, this stage includes the \sname{Phase 2} and \sname{Phase final} evaluations. The \sname{Phase 2} evaluation shall focus on checking if the pruning work begins as expected, and the \sname{Phase final} evaluation shall focus on the milestone progress.
+With regard to GSoC timeline, this stage includes the \sname{Phase 2} and \sname{Phase final} evaluations. The milestone progress is a numeric way to evaluate this project, note that the evaluation is based on numbers of opened PRs instead of merged PRs, since there will be delays to get input from all people on pull requests. Future work will not be counted.\par
+
+The \sname{Phase 2} evaluation shall focus on checking if the pruning work begins as expected, 10\% progress is enough to mark a \sname{Evaluation Pass}. The \sname{Phase final} evaluation shall focus on checking if the major part of pruning work is done, 70\% progress is enough to mark a \sname{Evaluation Pass}.
