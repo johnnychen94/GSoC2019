@@ -78,7 +78,7 @@ Another strategy is to do all the pruning work in separate branches to reduce th
 \begin{enumerate}
     \item create a separate branch \sname{api-prune} in each involved repositories, set up CI enviroment.
     \item port all methods and symbols in separate branches -- backward incompatible
-    \item merge each branch into \sname{master}, and tag a minor\footnote{According to \semanticversion{}, \sname{minor} version should be backward compatible. However, in this project, it's not suitable to bump \sname{major} version until all the pruning work is done, hence here we bump \sname{minor} and \sname{patch} version.} version to each repository.
+    \item merge each branch into \sname{master}, and tag a minor version to each repository.
     \item freeze minor version for one or two months to let downstream packages upgrade their codebase. In the meantime, do backward compatible API enhancement
     \item remove deprecated symbols, methods and their tests, tag a minor version
 \end{enumerate}
@@ -92,6 +92,6 @@ Porting methods from \packageA to \packageB takes the following routine:
 
 \subsubsection*{Stage Evaluation}
 
-With regard to GSoC timeline, this stage includes the \sname{Phase 2} and \sname{Phase final} evaluations. The milestone progress is a numeric way to evaluate this project, note that the evaluation is based on numbers of opened PRs instead of merged PRs, since there are be delays to get input from all people on pull requests. Future work isn't counted during evaluations.\par
+With regard to GSoC timeline, this stage includes the \sname{Phase 2} and \sname{Phase final} evaluations. Two attributes can be uses to evaluate the progress: milestone progress (percentage of merged PRs) and absolute number of opened PRs; the former helps evaluate the completness of this project and the latter helps evaluate the workload and difficulty of this project.\footnote{What we want is not to make the project pass but instead, to make \images{} a better ecosystem.}
 
-The \sname{Phase 2} evaluation shall focus on checking if the pruning work begins as expected, 10\% progress is enough to mark an \sname{Evaluation Pass}. The \sname{Phase final} evaluation shall focus on checking if the major part of pruning work is done, 70\% progress is enough to mark an \sname{Evaluation Pass}.
+The \sname{Phase 2} evaluation shall focus on checking if the pruning work begins as expected. The \sname{Phase final} evaluation shall focus on checking if the major part of pruning work is done.
