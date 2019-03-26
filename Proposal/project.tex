@@ -4,6 +4,8 @@
 
 \repoimages{} is a \langjulia image-processing toolbox that provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
+\subsection*{Project Background}
+
 However, despite of the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature julia packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, many image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
 Some apparent causes for its poor usability are:
@@ -29,6 +31,7 @@ Fortunately the problem is well-concerned in the community. Issues such as
 discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 12 methods implemented.} with one unified API:
 \mint{julia}{binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}}
 
+\subsection*{Project Expectation}
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package. This project aims to solve this problem by:
 \begin{enumerate}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and drafting RFCs
@@ -36,20 +39,27 @@ With these existing work, it's in the right time to revisit the whole \images{} 
 \end{enumerate}
 Writing demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be examined carefully to support high-level API design.
 
-Basically, this is a project on documentation and code refactoring, and it is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:
+Basically, this is a project on documentation and code refactoring to privide more consistent, robust and extensive APIs to both users and developers, and this is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:
 \begin{itemize}
     \item \textbf{user entrance:} \repoimages
     \item \textbf{core packages:} \repoimagecore, \repoimageaxes and \repoimagemetadata
     \item \textbf{application packages:} \repoimagemorphology, \repoimagetransformations, \repoimagedistance and \repoimagefiltering
     \item \textbf{new packages\footnote{These packages are not yet imported by \images.}:} \repoimagebinarization, \repohistogramthresholding, \repoimageinpainting
 \end{itemize}
-High-level packages (e.g., \repoimagetracking) and ploting packages (e.g., \repoimageview) are not under consideration of this project.\par
+Computer-vision packages (e.g., \repoimagetracking) and ploting packages (e.g., \repoimageview) are not under consideration of this project.\par
 
-While doing the documentation and code refactoring work, this project will have many side effects:
+While doing the documenting and code refactoring work, this project will have many side effects:
 \begin{itemize}
     \item partially rewritting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
     \item potential bug reports and patches to all related \langjulia repositories;
-    \item introduction of a new image processing packages, \sname{ImageEdge.jl}, to place legacy methods in \images
+    \item introduction of a new image processing package, \sname{ImageEdge.jl}, to place legacy methods in \images
     \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}
 \end{itemize}
-Note that these side effects are not included as a part of this project.
+Note that these side effects are not counted as the purpose of this project.\par
+
+Before introducing the details of delivery Schedule of this project, it's worth noting that workload and timeline of this project is hard to estimate due to two reasons:
+\begin{itemize}
+    \item this project can last for arbitrary long time, and can contain arbitrary number of issues and tasks; refactoring codebase can last forever.
+    \item lots of repositories are get involved in this project; time delay to receive inputs from others is significant.
+\end{itemize}
+Hence the purpose of this project isn't to make the ecosystem perfect, instead, it is to evolve an ecosystem that is significantly better in API and naming style with comprehensive documentation, so that future development towards \images{} \version{1.0} is possible.
