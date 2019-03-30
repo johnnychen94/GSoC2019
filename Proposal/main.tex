@@ -1,6 +1,6 @@
 % !TEX root = ./main.tex
 
-\documentclass[12pt, a4paper]{article}
+\documentclass[14pt]{extarticle}
 \usepackage[utf8]{inputenc}
 \usepackage[affil-it]{authblk}
 \usepackage[colorlinks=true,urlcolor=blue,citecolor=SpringGreen4,bookmarks=true]{hyperref}
@@ -9,26 +9,35 @@
 \usepackage{xspace}
 \usepackage{minted}
 \usepackage{enumitem}
+\usepackage{geometry}
 
 \input{symbols.tex}
 
+\geometry{
+ a4paper,
+ left = 20mm,
+ right = 20mm,
+ top = 30mm,
+ bottom = 30mm,
+ }
 \setlist{nolistsep}
 \renewcommand{\baselinestretch}{1.3}
-\renewcommand\Authfont{\fontsize{14.4}{14.4}\selectfont}
-\renewcommand\Affilfont{\fontsize{12}{14.4}\selectfont}
+\renewcommand\Authfont{\fontsize{16}{14.4}\selectfont}
+\renewcommand\Affilfont{\fontsize{14}{14.4}\selectfont}
 \renewcommand\abstractname{Abstract}
 
 
 \title{\huge Towards Better Images.jl Ecosystem}
 \author{Jiuning Chen\mailto{johnnychen94@hotmail.com}}
 \affil{Github: \href{https://github.com/johnnychen94}{Johnnychen94} \quad Slack: Johnny Chen\\
-Mentors: \zygmunt, \julio, \timholy, \evizero}
+Mentors: \zygmunt\thanks{Primary mentor} , \julio, \timholy, \evizero}
 \date{}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
+    \normalsize
     This project aims to achieve a better ecosystem for \href{https://juliaimages.org/latest/}{\images}, an image-processing toolbox in \href{https://julialang.org/}{\langjulia}. Main contributions consist of user-friendly documentation of \images{} ecosystem, developer manual, and more consistent, robust, and extensible APIs. Moreover, this project also serves as a subproject to \images{} \version{1.0} milestone.
 \end{abstract}
 
@@ -39,10 +48,10 @@ Mentors: \zygmunt, \julio, \timholy, \evizero}
 
 \newpage
 
-\input{project}
+\include{project}
 
-\input{dilivery}
+\include{dilivery}
 
-\input{aboutauthor}
+\include{aboutauthor}
 
 \end{document}

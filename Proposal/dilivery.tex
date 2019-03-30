@@ -77,7 +77,7 @@ One strategy of the pruning work is to start from packages with the least depend
 Another strategy is to do all the pruning work in separate branches to reduce the influence brought by its backward incompatibility. In other words, the workflow of pruning work is:
 \begin{enumerate}
     \item create a separate branch \sname{api-prune} in each involved repositories, set up CI enviroment.
-    \item port all methods and symbols in separate branches -- backward incompatible
+    \item port all methods and symbols in separate branches -- this is backward incompatible
     \item merge each branch into \sname{master}, and tag a minor version to each repository.
     \item freeze minor version for one or two months to let downstream packages upgrade their codebase. In the meantime, do backward compatible API enhancement
     \item remove deprecated symbols, methods and their tests, tag a minor version
