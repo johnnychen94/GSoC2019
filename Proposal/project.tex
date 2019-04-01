@@ -21,7 +21,7 @@ Fundamentally this is because the community is still in the progress of finding 
 
 Fortunately the problem is well-concerned in the community. Issues such as
 \begin{itemize}
-    \item \issue{\juliaimages}{\imagecore}{63} and \issue{\juliamath}{\fixedpointnumbers}{41} -- how to deal with overflow behavior of default \mintinline{julia}{N0f8} type?
+    \item \issue{\juliaimages}{\imagecore}{63} and \issue{\juliamath}{\fixedpointnumbers}{41} -- How to deal with overflow behavior of default \mintinline{julia}{N0f8} type?
     \item \issue{\juliaimages}{\images}{766} -- Use \mintinline{julia}{channelview} as possible as we can?
     \item \issue{\juliaimages}{\images}{767} -- Towards consistent style, part 1: a naming guide
     \item \issue{\juliaimages}{\images}{772} -- Revisiting the Images API
@@ -29,16 +29,16 @@ Fortunately the problem is well-concerned in the community. Issues such as
     \item \issue{zygmuntszpak}{\imagebinarization}{23} -- What's the appropriate argument order?
     \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
 \end{itemize}
-discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 12 methods implemented.} with one unified API:
-\mint{julia}{binarize(::BinarizationAlgorithm, ::AbstractArray{T,2}) where {T}}
+discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 13 methods implemented.} with one unified API:
+\mint{julia}{binarize(::BinarizationAlgorithm, img::AbstractArray{<:Colorant,2})}
 
 \subsection*{Project Expectation}
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package, and more ambitiously, towards \images{} \version{1.0}. This project aims to solve this problem by:
 \begin{enumerate}
-    \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and drafting RFCs
-    \item pruning codebase of the ecosystem according to the drafted RFCs
+    \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and
+    \item drafting RFCs (Request For Comments) and pruning codebase of the ecosystem accordingly.
 \end{enumerate}
-Writing demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions are examined carefully to support high-level API design.
+Writing tutorials and demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be tested and documented carefully to support high-level API design.
 
 This is a project on documentation and code refactoring to provide more consistent, robust and extensive APIs to both users and developers, and this is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:
 \begin{itemize}
@@ -53,12 +53,12 @@ While doing the documenting and code refactoring work, this project has many sid
 \begin{itemize}
     \item partially rewriting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
     \item potential bug reports and patches to all related \langjulia repositories;
-    \item introduction of a new image processing package, \sname{ImageEdge.jl}, to place legacy methods in \images
+    \item introduction of new image processing packages to place legacy methods in \images, for example, \sname{ImageEdge.jl};
     \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}
 \end{itemize}
-Note that these side effects are not counted as the purpose of this project.\par
+Note that these side effects are not counted as expectations of this project.\par
 
-Before introducing the details of delivery Schedule of this project, it's worth noting that workload and timeline of this project are hard to estimate due to two reasons:
+Before introducing the details of delivery schedule of this project, it's worth noting that workload and timeline of this project are hard to estimate due to two reasons:
 \begin{itemize}
     \item this project can last for arbitrarily long time, and can contain an arbitrary number of issues and tasks; refactoring codebase can last forever.
     \item lots of repositories are get involved in this project; time delay in receiving inputs from others is significant.
