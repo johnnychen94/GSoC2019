@@ -10,10 +10,10 @@ However, despite the not yet benchmarked performance, this toolbox at present is
 
 Some apparent causes for its poor usability are:
 \begin{itemize}
-    \item there're few demos or recipes in \images{} for new users to start with;
+    \item there are few demos or recipes in \images{} for new users to start with;
     \item APIs vary greatly across Images.jl submodules, and are unintuitive to the non-experts;
     \item there's no image-processing-specific style guide on naming and programming, except the \langjulia{} \href{https://docs.julialang.org/en/v1/manual/style-guide/}{style guide};
-    \item there're too many temporary helper functions defined everywhere;
+    \item there are too many temporary helper functions defined everywhere;
     \item \images{} is an ecosystem but it lacks a comprehensive illustration of its packages;
     \item coverage of trait functions are not fully tested.
 \end{itemize}
@@ -29,14 +29,14 @@ Fortunately the problem is well-concerned in the community. Issues such as
     \item \issue{zygmuntszpak}{\imagebinarization}{23} -- What's the appropriate argument order?
     \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
 \end{itemize}
-discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there're 13 methods implemented.} with one unified API:
+discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there are 13 methods implemented.} with one unified API:
 \mint{julia}{binarize(::BinarizationAlgorithm, img::AbstractArray{<:Colorant,2})}
 
 \subsection*{Project Expectation}
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package, and more ambitiously, towards \images{} \version{1.0}. This project aims to solve this problem by:
 \begin{enumerate}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and
-    \item drafting RFCs (Request For Comments) and pruning codebase of the ecosystem accordingly.
+    \item drafting RFCs (Request For Comments) and pruning code base of the ecosystem accordingly.
 \end{enumerate}
 Writing tutorials and demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be tested and documented carefully to support high-level API design.
 
@@ -47,7 +47,7 @@ This is a project on documentation and code refactoring to provide more consiste
     \item \textbf{application packages:} \repoimagemorphology, \repoimagetransformations, \repoimagedistance and \repoimagefiltering
     \item \textbf{new packages\footnote{These packages are not yet imported by \images.}:} \repoimagebinarization, \repohistogramthresholding, \repoimageinpainting
 \end{itemize}
-Computer-vision packages (e.g., \repoimagetracking) and ploting packages (e.g., \repoimageview) are not under consideration of this project.\par
+Computer-vision packages (e.g., \repoimagetracking) and plotting packages (e.g., \repoimageview) are not under consideration of this project.\par
 
 While doing the documenting and code refactoring work, this project has many side effects:
 \begin{itemize}
@@ -59,7 +59,7 @@ Note that these side effects are not counted as expectations of this project.\pa
 
 Before introducing the details of delivery schedule of this project, it's worth noting that workload and timeline of this project are hard to estimate due to two reasons:
 \begin{itemize}
-    \item this project can last for arbitrarily long time, and can contain an arbitrary number of issues and tasks; refactoring codebase can last forever.
+    \item this project can last for arbitrarily long time, and can contain an arbitrary number of issues and tasks; refactoring code base can last forever.
     \item lots of repositories are get involved in this project; time delay in receiving inputs from others is significant.
 \end{itemize}
 Hence the purpose of this project isn't to make the ecosystem perfect, instead, it is to evolve an ecosystem that is significantly better in API and naming style, so that future development towards \images{} \version{1.0} is possible.
