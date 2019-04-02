@@ -2,9 +2,9 @@
 
 \section{Project Description}\label{sec:project}
 
-\repoimages{} is a \langjulia image-processing toolbox that provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
-
 \subsection*{Project Background}
+
+\repoimages{} is a \langjulia image-processing toolbox that provides a collection of out-of-box functions\footnote{An overview of currently implemented image-processing functionalities is shown at \apicomparison.} to do image processing tasks just like \reposcikitimage{} and \matlabimageprocessing{} do.
 
 However, despite the not yet benchmarked performance, this toolbox at present is still not friendly to both users and developers. Unlike other mature \langjulia{} packages such as \repojump and \repogpuarrays, \images{} requires potential users and developers to understand the very details of its mechanism and architecture, and this becomes even harder for them without comprehensive documentation on it. Under this circumstance, many image-processing researchers are still using \langpython and \langmatlab for their daily work.
 
@@ -51,7 +51,6 @@ Computer-vision packages (e.g., \repoimagetracking) and ploting packages (e.g., 
 
 While doing the documenting and code refactoring work, this project has many side effects:
 \begin{itemize}
-    \item partially rewriting of \href{https://juliaimages.org}{user documentation} in a more meaningful way;
     \item potential bug reports and patches to all related \langjulia repositories;
     \item introduction of new image processing packages to place legacy methods in \images, for example, \sname{ImageEdge.jl};
     \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}

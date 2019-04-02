@@ -26,6 +26,7 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
     \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59}\\
       {\small
       Enhance \mintinline{julia}{imresize} with more delicate dispatch design\\
+      Rewrite all the test cases of \mintinline{julia}{imresize}\\
       reviewed by \evizero and \timholy
       }
     \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8}\\
@@ -40,14 +41,14 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
       }
     \item Documentation: \pullrequest{\juliaimages}{\testimages}{35}\\
       {\small
-      add docstring to \mintinline{julia}{testimage}, the only exported function\\
+      initialize docstring of \mintinline{julia}{testimage}, which is the only exported function\\
       reviewed by \timholy
       }
     \item Documentation(RFC, pending): \pullrequest{zygmuntszpak}{\imagebinarization}{25}\\
       {\small
       redesign the docstring structure of all codes in \imagebinarization\\
       this PR serves as a first attempt to \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide\\
-      not yet reviewed because all active maintainers are busy lately
+      not yet reviewed because the maintainers are busy lately
       }
     \item Patch(pending): \pullrequest{\fluxml}{\flux}{710}\\
       {\small
@@ -65,6 +66,14 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
       add support for \textsf{$\approx$} and fix dispatch bug on \textsf{$==$} \\
       reviewed by \mikeinnes
       }
+\end{itemize}
+I've also authored some related issues:
+\begin{itemize}
+  \item \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
+  \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
+  \item \issue{\juliaimages}{\imagedistance}{7} -- Redesign the type hierarchy
+  \item \issue{\juliaimages}{\images}{766} -- Use \mintinline{julia}{channelview} as possible as we can?
+  \item \issue{\juliaimages}{\images}{765} -- Move \mintinline{julia}{difftype} to \imagecore
 \end{itemize}
 
 \subsection*{Other Experiences}
