@@ -29,7 +29,7 @@ From weeks 1 to 7, many discussions happen simultaneously in the following way:
     \item \textbf{Code Review:} dig into source codes of repositories of images ecosystem to find anything that's likely in need of changing. Other mature \langjulia{} packages, and image-processing libraries in other languages such as \reposcikitimage{} and \matlabimageprocessing{} are references.
     \item \textbf{Issue Open:} open an issue for anything worth a discussion, e.g., legacy codes, misplaced codes, codes with bad practice, and undocumented practices and decisions.
     \item \textbf{Decision Making:} The conventional rules are taken: a decision is made when consensus is reached, otherwise the current maintainer of \images{} make the decision. If a decision can't be made before June 16 (Week 8), it'll be dropped as future work.
-    \item \textbf{Record:} all approved, rejected, and future-work proposals are documented in a temporary repository\footnote{This repository will be archived after GSoC.} - \repogsoctempdoc{}. Developer manual is drafted to \repoimagesgithubio{} when there are enough decisions made.
+    \item \textbf{Record:} all approved, rejected, and future-work proposals are documented in a temporary repository - \repogsoctempdoc{}. Developer manual is drafted to \repoimagesgithubio{} when there are enough decisions made.
 \end{enumerate}
 
 From weeks 6 to 9, RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} happen simultaneously in the following way:
@@ -53,6 +53,7 @@ Four items are evaluated at the end of this stage, i.e., \textsf{Phase 1 Evaluat
 A score of 6/10 stands for \textsf{Evaluation Pass}.
 % end of subsection
 
+\newpage
 \subsection{Pruning Code Base}\label{subsec:prune}
 After the RFCs being approved and announced to the community, the pruning stage begins. Ideally, this stage begins from \date{July 1} to \date{August 26} (weeks 12-22).
 
@@ -71,6 +72,12 @@ For the ease of tracking pruning progress, a project/milestone is set in \repoim
 Challenges during this stage are backward incompatibility and complex package dependencies. This section focus on strategies to address these problems. \par
 
 One strategy of the pruning work is to start from packages with the least dependencies to that with the most dependencies. Using terms from \cref{sec:project}, we start from \sname{core packages} (e.g., \repoimagecore{}), to \sname{application packages} (e.g., \repoimagetransformations{}), and finally to the \sname{user-entrance package}, i.e., \repoimages{}. \sname{New packages} are easy to be handled since they're not officially included in \images{} ecosystem yet. \par
+
+\begin{figure}[htbp]
+\caption{Dependency Hierarchy of \images{} Ecosystem}
+  \centering
+  \includegraphics[width=\textwidth]{figures/images_dep.pdf}
+\end{figure}
 
 \newcommand{\packageA}{package \sname{A}\xspace}
 \newcommand{\packageB}{package \sname{B}\xspace}

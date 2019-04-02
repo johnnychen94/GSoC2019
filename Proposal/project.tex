@@ -13,11 +13,16 @@ Some apparent causes for its poor usability are:
     \item there are few demos or recipes in \images{} for new users to start with;
     \item APIs vary greatly across Images.jl submodules, and are unintuitive to the non-experts;
     \item there's no image-processing-specific style guide on naming and programming, except the \langjulia{} \href{https://docs.julialang.org/en/v1/manual/style-guide/}{style guide};
-    \item there are too many temporary helper functions defined everywhere;
+    \item there are many temporary helper functions and legacy codes everywhere;
     \item \images{} is an ecosystem but it lacks a comprehensive illustration of its packages;
     \item coverage of trait functions are not fully tested.
 \end{itemize}
-Fundamentally this is because the community is still in the progress of finding the most suitable programming style to process images using \langjulia.
+Fundamentally this is because the community is still in the progress of finding the most suitable programming style to process images using \langjulia. We can smell a bad code design from \cref{fig:imagetransformations_dep}, the dependency overview of \imagetransformations{}, where \imagecore{} doesn't play its core role well.
+
+\begin{figure}
+    \includegraphics[width=\textwidth]{figures/imagetransformations_dep.pdf}
+    \caption{Dependency of \imagetransformations{}}\label{fig:imagetransformations_dep}
+\end{figure}
 
 Fortunately the problem is well-concerned in the community. Issues such as
 \begin{itemize}
@@ -31,7 +36,10 @@ Fortunately the problem is well-concerned in the community. Issues such as
 \end{itemize}
 discuss the coding styles and programming practice in the most generic way. Packages such as \repohistogramthresholding and \repoimagebinarization are examples that validate the effectiveness and usefulness of style consensus reached in those issues. For instance, in \imagebinarization, one could binarize an image using any implemented methods\footnote{At the time of writing, there are 13 methods implemented.} with one unified API:
 \mint{julia}{binarize(::BinarizationAlgorithm, img::AbstractArray{<:Colorant,2})}
+% end of subsection
 
+
+\newpage
 \subsection*{Project Expectation}
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package, and more ambitiously, towards \images{} \version{1.0}. This project aims to solve this problem by:
 \begin{enumerate}
