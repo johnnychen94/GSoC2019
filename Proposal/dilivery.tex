@@ -1,6 +1,6 @@
 % !TEX root = ./main.tex
 
-\section{Delivery Schedule}\label{sec:delivery}
+\section{Delivery}\label{sec:delivery}
 
 This project is delivered in two stages: \textbf{documenting} and \textbf{pruning}. Documenting and recording in the first stage serves as the preparation for the second stage's pruning work of \images{} ecosystem. The existence of pruning stage is to minimize the impact of large amount of backward incompatible API changes, which means backward compatible PRs can happen at any stage. \par
 
@@ -25,31 +25,37 @@ In the beginning of the discussion period, an ecosystem documentation be add to 
 The RFC drafting period begins from \date{May 27} to \date{June 23} (weeks 6 to 9)\footnote{This doesn't mean RFCs can't be drafted before \date{May 27}.}. Based on previous discussions, one or more RFCs are drafted and discussed in this period. The last week of this stage is used for evaluation, merging, and announcement of RFCs.\par
 
 From weeks 1 to 7, many discussions happen simultaneously in the following way:
+{\normalsize
 \begin{enumerate}
     \item \textbf{Code Review:} dig into source codes of repositories of images ecosystem to find anything that's likely in need of changing. Other mature \langjulia{} packages, and image-processing libraries in other languages such as \reposcikitimage{} and \matlabimageprocessing{} are references.
     \item \textbf{Issue Open:} open an issue for anything worth a discussion, e.g., legacy codes, misplaced codes, codes with bad practice, and undocumented practices and decisions.
     \item \textbf{Decision Making:} The conventional rules are taken: a decision is made when consensus is reached, otherwise the current maintainer of \images{} make the decision. If a decision can't be made before June 16 (Week 8), it'll be dropped as future work.
     \item \textbf{Record:} all approved, rejected, and future-work proposals are documented in a temporary repository - \repogsoctempdoc{}. Developer manual is drafted to \repoimagesgithubio{} when there are enough decisions made.
 \end{enumerate}
+}
 
 From weeks 6 to 9, RFC drafting\footnote{A \href{https://github.com/tensorflow/community/blob/master/rfcs/yyyymmdd-rfc-template.md}{RFC Template} is available in the Tensorflow community, and \href{https://github.com/tensorflow/community/blob/master/rfcs/20180827-api-names.md}{20180827-api-names.md} is a good API-renaming RFC example.} happen simultaneously in the following way:
+{\normalsize
 \begin{enumerate}
     \item \textbf{Code Review:} for each approved proposal, find all involved code pieces, and give a solution to it according to the developer manual. The principle of code review is to rigorously stick to decisions made in the discussion period -- either there's one principle or no principle.
     \item \textbf{RFC Post:} post the draft-version of RFC in \repoimagesgithubio{} as WIP PR.
     \item \textbf{RFC Review:} if there's an issue with any item in the proposed RFC, suspend the related items and go back to the discussion workflow until a decision is made.
     \item \textbf{RFC Approval and Announcement:} After approval of RFCs, they are merged as records and announced to the community via slack and discourse. RFC merging and announcement only happen in the last two weeks in case there are more items to be added.
 \end{enumerate}
+}
 RFC details on how the code base is pruned are described in \cref{subsec:prune}.
 
 \subsubsection*{Stage Evaluation}
 
 Four items are evaluated at the end of this stage, i.e., \textsf{Phase 1 Evaluation}:
+{\small
 \begin{itemize}
     \item 3/10: activity on issues and discussions
     \item 2/10: ecosystem documentation
     \item 2/10: developer manual
     \item 3/10: RFCs
 \end{itemize}
+}
 A score of 6/10 stands for \textsf{Evaluation Pass}.
 % end of subsection
 
@@ -60,11 +66,13 @@ After the RFCs being approved and announced to the community, the pruning stage 
 \subsubsection*{Stage Expectations}
 
 The pruning stage is to clean the code base according to the RFC operation guide. There are three types of pruning work:
+{\small
 \begin{itemize}
     \item symbol renaming, move, and removal -- backward incompatible
     \item API changes -- backward incompatible
     \item API enhancement -- backward compatible
 \end{itemize}
+}
 For the ease of tracking pruning progress, a project/milestone is set in \repoimages{} to track the progress, and each pruning-related PR/issue will be tagged. \par
 
 \subsubsection*{Stage Workflow}
@@ -76,12 +84,11 @@ One strategy of the pruning work is to start from packages with the least depend
 \begin{figure}[htbp]
 \caption{Dependency Hierarchy of \images{} Ecosystem}
   \centering
-  \includegraphics[width=\textwidth]{figures/images_dep.pdf}
+  \includegraphics[width=0.8\textwidth]{figures/images_dep.pdf}
 \end{figure}
 
-\newcommand{\packageA}{package \sname{A}\xspace}
-\newcommand{\packageB}{package \sname{B}\xspace}
 Another strategy is to do all the pruning work in separate branches to reduce the influence brought by its backward incompatibility. In other words, the workflow of pruning work is:
+{\normalsize
 \begin{enumerate}
     \item create a separate branch \sname{api-prune} in each involved repositories, set up CI environment.
     \item port all methods and symbols in separate branches -- this is backward incompatible
@@ -89,13 +96,18 @@ Another strategy is to do all the pruning work in separate branches to reduce th
     \item freeze minor version for one or two months to let downstream packages upgrade their code base. In the meantime, do backward compatible API enhancement
     \item remove deprecated symbols, methods and their tests, tag a minor version
 \end{enumerate}
-Due to limited time of GSoC, steps 1-3 are counted as a part of GSoC project, and steps 4-5 belong to future work. Since lots of repositories are involved in this project, it's highly possible that this project ends in step 2.\par
+}
+Due to limited time of GSoC, steps 1-3 are counted as a part of GSoC project, and steps 4-5 belong to future work. Since lots of repositories are involved in this project, it's highly possible that this project is still in step 2 when GSoC ends.\par
 
-Porting methods from \packageA to \packageB takes the following routine:
-\begin{enumerate}
-    \item implement new methods and unit tests in \packageB
-    \item deprecate old methods in \packageA; these codes will be deleted after at least two minor releases.
-\end{enumerate}
+% \newcommand{\packageA}{package \sname{A}\xspace}
+% \newcommand{\packageB}{package \sname{B}\xspace}
+% Porting methods from \packageA to \packageB takes the following routine:
+% {\normalsize
+% \begin{enumerate}
+%     \item implement new methods and unit tests in \packageB
+%     \item deprecate old methods in \packageA; these codes will be deleted after at least two minor releases.
+% \end{enumerate}
+% }
 
 \subsubsection*{Stage Evaluation}
 

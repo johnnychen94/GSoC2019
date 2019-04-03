@@ -2,7 +2,7 @@
 
 \section{About the Author}\label{sec:about_author}
 
-My name is \textsf{Jiuning Chen}, a third-year student in the School of Mathematical Sciences, East China Normal University, Shanghai. I'm currently doing research related to image processing, computer vision, convex optimization, and machine learning. It's worth noting that I got my bachelor's degree as a philosophy student, this experience makes me a good candidate to think about the future of \images{} ecosystem from a more generic and broader view -- I have good feelings about what needs improvement and what doesn't.\par
+My name is \textsf{Jiuning Chen}, a third-year student in the School of Mathematical Sciences, East China Normal University, Shanghai. I'm currently doing research related to image processing, computer vision, convex optimization, and machine learning. \par
 
 50+ hours per week can be guaranteed on this project since there's no other internship or vacation plan this summer. After GSoC, at least 20+ hours per week can be guaranteed to continue the long-term \images{} \version{1.0} project since I've passed the Ph.D. candidate examination in ECNU -- no compulsory work in the first academic year. \par
 
@@ -13,61 +13,51 @@ My main interest is to improve the \images, in the meantime, there are some smal
 
 My previous PRs can help proving that I'm qualified to make progress on this project. Unless explicitly noted, all following PRs are non-trivial and merged.
 \begin{itemize}
-    \item Enhancement: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment -- a proof of my good understanding on julia}\\
+    \item Enhancement: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment -- a proof of my good understanding on julia}  {\small -- reviewed by \mbauman}\\
       {\small
-      Support \mintinline{julia}{repeat} at any dimension as an enhancement\\
-      reviewed by \mbauman
+      Support \mintinline{julia}{repeat} at any dimension as an enhancement
       }
-    \item Feature: \pullrequest{\juliaimages}{\imagetransformations}{58}\\
+    \item Feature: \pullrequest{\juliaimages}{\imagetransformations}{58} {\small -- reviewed by \evizero and \timholy}\\
       {\small
-      Implement a robust \mintinline{julia}{imrotate} function\\
-      reviewed by \evizero and \timholy
+      Implement a robust \mintinline{julia}{imrotate} function
       }
-    \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59}\\
+    \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59} {\small -- reviewed by \evizero and \timholy}\\
       {\small
       Enhance \mintinline{julia}{imresize} with more delicate dispatch design\\
-      Rewrite all the test cases of \mintinline{julia}{imresize}\\
-      reviewed by \evizero and \timholy
+      Rewrite all the test cases of \mintinline{julia}{imresize}
       }
-    \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8}\\
+    \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8} {\small -- reviewed by \julio}\\
       {\small
-      fix a module design bug caused by misunderstanding of method overriding\\
-      reviewed by \julio
+      fix a module design bug caused by misunderstanding of method overriding
       }
-    \item Patch: \pullrequest{\juliaimages}{\imagesgithubio}{50} \\
+    \item Patch: \pullrequest{\juliaimages}{\imagesgithubio}{50} {\small -- reviewed by \evizero}\\
       {\small
-      fix the paralyzed autodeployment \\
-      reviewed by \evizero
+      fix the paralyzed autodeployment
       }
-    \item Documentation: \pullrequest{\juliaimages}{\testimages}{35}\\
+    \item Documentation: \pullrequest{\juliaimages}{\testimages}{35} {\small -- reviewed by \timholy}\\
       {\small
-      initialize docstring of \mintinline{julia}{testimage}, which is the only exported function\\
-      reviewed by \timholy
+      initialize docstring of \mintinline{julia}{testimage}, which is the only exported function
       }
     \item Documentation(RFC, pending): \pullrequest{zygmuntszpak}{\imagebinarization}{25}\\
       {\small
       redesign the docstring structure of all codes in \imagebinarization\\
-      this PR serves as a first attempt to \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide\\
-      not yet reviewed because the maintainers are busy lately
+      this PR serves as a first attempt to \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
       }
-    \item Patch(pending): \pullrequest{\fluxml}{\flux}{710}\\
+    \item Patch(pending): \pullrequest{\fluxml}{\flux}{710} {\small -- reviewed by \mikeinnes}\\
       {\small
-      reimplement \mintinline{julia}{activations} to replace the current broken one\\
-      reviewed by \mikeinnes
+      reimplement \mintinline{julia}{activations} to replace the current broken one
       }
-    \item Patch: \pullrequest{\fluxml}{\flux}{372}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{372} {\small -- reviewed by \mikeinnes}\\
       {\small
       restrict argument type of \mintinline{julia}{Dense}, initialize test cases for \mintinline{julia}{layers/basic.jl}\\
-      this PR is quite trivial but necessary\\
-      reviewed by \mikeinnes
+      this PR is quite trivial but necessary
       }
-    \item Patch: \pullrequest{\fluxml}{\flux}{371}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{371} {\small -- reviewed by \mikeinnes}\\
       {\small
-      add support for \textsf{$\approx$} and fix dispatch bug on \textsf{$==$} \\
-      reviewed by \mikeinnes
+      add support for \textsf{$\approx$} and fix dispatch bug on \textsf{$==$}
       }
 \end{itemize}
-I've also authored some related issues:
+It's worth noting that I got my bachelor's degree as a philosophy student, this experience makes me a good candidate to think about the future of \images{} ecosystem from a more generic and broader view in a reflective and skeptical manner -- I have good feelings about what needs improvement and what doesn't. The issues I authored can prove this:
 \begin{itemize}
   \item \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
   \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?

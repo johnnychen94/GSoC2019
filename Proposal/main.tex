@@ -11,13 +11,21 @@
 \usepackage{enumitem}
 \usepackage{geometry}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhead[LO]{Google Summer of Code 2019}
+\fancyhead[C]{}
+\fancyfoot[L,R]{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
 
 \input{symbols.tex}
 
 \geometry{
  a4paper,
- left = 20mm,
- right = 20mm,
+ left = 25mm,
+ right = 25mm,
  top = 25mm,
  bottom = 20mm,
  }
