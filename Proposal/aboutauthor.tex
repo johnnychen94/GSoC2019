@@ -13,9 +13,9 @@ My main interest is to improve the \images, in the meantime, there are some smal
 
 My previous PRs can help proving that I'm qualified to make progress on this project. Unless explicitly noted, all following PRs are non-trivial and merged.
 \begin{itemize}
-    \item Enhancement: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment -- a proof of my good understanding on julia}  {\small -- reviewed by \mbauman}\\
+    \item Patch: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment}  {\small -- reviewed by \mbauman}\\
       {\small
-      Support \mintinline{julia}{repeat} at any dimension as an enhancement
+      Support \mintinline{julia}{repeat} at any dimension
       }
     \item Feature: \pullrequest{\juliaimages}{\imagetransformations}{58} {\small -- reviewed by \evizero and \timholy}\\
       {\small
@@ -24,7 +24,7 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
     \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59} {\small -- reviewed by \evizero and \timholy}\\
       {\small
       Enhance \mintinline{julia}{imresize} with more delicate dispatch design\\
-      Rewrite all the test cases of \mintinline{julia}{imresize}
+      Rewrite all legacy test cases of \mintinline{julia}{imresize}
       }
     \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8} {\small -- reviewed by \julio}\\
       {\small
@@ -41,16 +41,15 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
     \item Documentation(RFC, pending): \pullrequest{zygmuntszpak}{\imagebinarization}{25}\\
       {\small
       redesign the docstring structure of all codes in \imagebinarization\\
-      this PR serves as a first attempt to \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
+      this PR serves as a first attempt to consistent documentation style
       }
-    \item Patch(pending): \pullrequest{\fluxml}{\flux}{710} {\small -- reviewed by \mikeinnes}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{710} {\small -- reviewed by \mikeinnes}\\
       {\small
       reimplement \mintinline{julia}{activations} to replace the current broken one
       }
     \item Patch: \pullrequest{\fluxml}{\flux}{372} {\small -- reviewed by \mikeinnes}\\
       {\small
-      restrict argument type of \mintinline{julia}{Dense}, initialize test cases for \mintinline{julia}{layers/basic.jl}\\
-      this PR is quite trivial but necessary
+      restrict argument type of \mintinline{julia}{Dense}, initialize test cases for \mintinline{julia}{layers/basic.jl}
       }
     \item Patch: \pullrequest{\fluxml}{\flux}{371} {\small -- reviewed by \mikeinnes}\\
       {\small
@@ -59,12 +58,13 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
 \end{itemize}
 It's worth noting that I got my bachelor's degree as a philosophy student, this experience makes me a good candidate to think about the future of \images{} ecosystem from a more generic and broader view in a reflective and skeptical manner -- I have good feelings about what needs improvement and what doesn't. The issues I authored can prove this:
 \begin{itemize}
+  \item \issue{\juliaimages}{\images}{792} -- reduce \images{} dependency complexity
   \item \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
-  \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
-  \item \issue{\juliaimages}{\imagedistance}{7} -- Redesign the type hierarchy
   \item \issue{\juliaimages}{\images}{766} -- Use \mintinline{julia}{channelview} as possible as we can?
   \item \issue{\juliaimages}{\images}{765} -- Move \mintinline{julia}{difftype} to \imagecore
-  \item \issue{\juliaimages}{\images}{792} -- reduce \images{} dependency complexity
+  \item \issue{zygmuntszpak}{\imagebinarization}{26} -- Filter specification: alternative to \mintinline{julia}{binarize}
+  \item \issue{zygmuntszpak}{\imagebinarization}{24} -- Export limited number of symbols?
+  \item \issue{\juliaimages}{\imagedistance}{7} -- Redesign the type hierarchy
 \end{itemize}
 
 \subsection*{Other Experiences}
