@@ -53,40 +53,37 @@ Packages such as \repohistogramthresholding and \repoimagebinarization are examp
 \newpage
 \subsection*{Project Expectation}
 With these existing work, it's in the right time to revisit the whole \images{} ecosystem and head towards a more easy-to-use \images{} package, and more ambitiously, towards \images{} \version{1.0}. This project aims to solve this problem by:
-{\normalsize
 \begin{enumerate}
     \item providing more comprehensive and integrated documentation on both style guide and ecosystem illustration, and
     \item drafting RFCs (Request For Comments) and pruning code base of the ecosystem accordingly.
 \end{enumerate}
-}
 Writing tutorials and demos of \images{} is not included in this project since it belongs to a totally different project. Trait functions will be tested and documented carefully to support high-level API design.
 
+{\normalsize
 This is a project on documentation and code refactoring to provide more consistent, robust and extensive APIs to both users and developers, and this is also a sub-project to \images{} \sname{v1.0} milestone. Potentially involved packages are:
-{\small
+\small
 \begin{itemize}
     \item \textbf{user entrance:} \repoimages
     \item \textbf{core packages:} \repoimagecore, \repoimageaxes
     \item \textbf{application packages:} \repoimagemorphology, \repoimagetransformations, \repoimagedistance \repoimagemetadata and \repoimagefiltering
     \item \textbf{new packages\footnote{These packages are not yet imported by \images.}:} \repoimagebinarization, \repohistogramthresholding, \repoimageinpainting
 \end{itemize}
-}
-Computer-vision packages (e.g., \repoimagetracking) and plotting packages (e.g., \repoimageview) are not under consideration of this project.\par
+\normalsize
+Computer-vision packages (e.g., \repoimagetracking) and plotting packages (e.g., \repoimageview) are not under consideration of this project.\par}
 
 While doing the documenting and code refactoring work, this project has many side effects:
 {\normalsize
 \begin{itemize}
     \item potential bug reports and patches to all related \langjulia repositories;
-    \item introduction of new image processing packages to place legacy methods in \images, for example, \sname{ImageEdge.jl};
+    \item introduction of new image processing packages (e.g., \sname{ImageEdge.jl}) to place legacy methods in \images;
     \item introduction of a new image denoising package, \repoimagenoise, as a concept-validation experimental field.\footnote{This is the author's research field.}
 \end{itemize}
 }
 Note that these side effects are not counted as expectations of this project.\par
 
-Before introducing the details of delivery schedule of this project, it's worth noting that workload and timeline of this project are hard to estimate due to two reasons:
-{\normalsize
+Before introducing the details of delivery schedule of this project, it's worth noting that workload and timeline of this project are hard to estimate due to the nature of this project:
 \begin{itemize}
     \item this project can last for arbitrarily long time, and can contain an arbitrary number of issues and tasks; refactoring code base can last forever.
     \item lots of repositories are get involved in this project; time delay in receiving inputs from others is significant.
 \end{itemize}
-}
 Hence the purpose of this project isn't to make the ecosystem perfect, instead, it is to evolve an ecosystem that is significantly better in API and naming style, so that future development towards \images{} \version{1.0} is possible.

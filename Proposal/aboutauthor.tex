@@ -2,39 +2,39 @@
 
 \section{About the Author}\label{sec:about_author}
 
-My name is \textsf{Jiuning Chen}, a third-year student in the School of Mathematical Sciences, East China Normal University, Shanghai. I'm currently doing research related to image processing, computer vision, convex optimization, and machine learning. \par
+My name is \textsf{Jiuning Chen}, a third-year student in the School of Mathematical Sciences, East China Normal University, Shanghai. I'm currently doing research related to image processing, computer vision, convex optimization, and machine learning. Moreover, I'll be a Ph.D student in ECNU this fall. \par
 
-50+ hours per week can be guaranteed on this project since there's no other internship or vacation plan this summer. After GSoC, at least 20+ hours per week can be guaranteed to continue the long-term \images{} \version{1.0} project since I've passed the Ph.D. candidate examination in ECNU -- no compulsory work in the first academic year. \par
+40+ hours per week can be guaranteed on this project since there's no other internship or vacation plan this summer. After GSoC, at least 20+ hours per week can be guaranteed to continue the long-term \images{} \version{1.0} project -- no compulsory work in the first academic year as Ph.D student. \par
 
-I learned \langjulia in Aug 2018 and become a contributor to \langjulia community since Oct 2018, and plan to make more contributions as a member of this community. Currently I'm one of the developers in \repoimagesgithubio{}.
+I learned \langjulia in Aug 2018 and become a contributor to \langjulia community since Oct 2018, and plan to make more contributions as a member of this community. To better pull this project off, I've been accepted as the member of \juliaimages.
 
 \subsection*{Contribution to the community}
-My main interest is to improve the \images, in the meantime, there are some small patches to \flux{} and \textsf{julia}. The major part of my contribution to \textsf{\juliaimages} is on issues: 26\% pull requests, 46\% issues, 20\% commits, 8\% code reviews. This is because I don't think \images{} is at its good status for new features until we pull this GSoC project off.
+My main interest is to improve the \images, in the meantime, there are some small patches to \flux{} and \textsf{julia}. The major part of my contribution to \textsf{\juliaimages} is on issues: 26\% pull requests, 46\% issues, 18\% commits, 10\% code reviews. This is because I don't think \images{} is at its good status for new features until we achieve this GSoC project's expectations.
 
-My previous PRs can help proving that I'm qualified to make progress on this project. Unless explicitly noted, all following PRs are non-trivial and merged.
+My previous PRs can help prove that I'm qualified to make progress on this project. Unless explicitly noted, all following PRs are non-trivial and merged.
 \begin{itemize}
-    \item Patch: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment}  {\small -- reviewed by \mbauman}\\
+    \item Patch: \pullrequest{\julialang}{julia}{29626}\footnote{I only learned \langjulia{} for two months at that moment} \\
       {\small
       Support \mintinline{julia}{repeat} at any dimension
       }
-    \item Feature: \pullrequest{\juliaimages}{\imagetransformations}{58} {\small -- reviewed by \evizero and \timholy}\\
+    \item Feature: \pullrequest{\juliaimages}{\imagetransformations}{58} \\
       {\small
       Implement a robust \mintinline{julia}{imrotate} function
       }
-    \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59} {\small -- reviewed by \evizero and \timholy}\\
+    \item Enhancement: \pullrequest{\juliaimages}{\imagetransformations}{59} \\
       {\small
       Enhance \mintinline{julia}{imresize} with more delicate dispatch design\\
       Rewrite all legacy test cases of \mintinline{julia}{imresize}
       }
-    \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8} {\small -- reviewed by \julio}\\
+    \item Patch: \pullrequest{\juliaimages}{\imagedistance}{8} \\
       {\small
       fix a module design bug caused by misunderstanding of method overriding
       }
-    \item Patch: \pullrequest{\juliaimages}{\imagesgithubio}{50} {\small -- reviewed by \evizero}\\
+    \item Patch: \pullrequest{\juliaimages}{\imagesgithubio}{50} \\
       {\small
       fix the paralyzed autodeployment
       }
-    \item Documentation: \pullrequest{\juliaimages}{\testimages}{35} {\small -- reviewed by \timholy}\\
+    \item Documentation: \pullrequest{\juliaimages}{\testimages}{35} \\
       {\small
       initialize docstring of \mintinline{julia}{testimage}, which is the only exported function
       }
@@ -43,20 +43,20 @@ My previous PRs can help proving that I'm qualified to make progress on this pro
       redesign the docstring structure of all codes in \imagebinarization\\
       this PR serves as a first attempt to consistent documentation style
       }
-    \item Patch: \pullrequest{\fluxml}{\flux}{710} {\small -- reviewed by \mikeinnes}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{710} \\
       {\small
       reimplement \mintinline{julia}{activations} to replace the current broken one
       }
-    \item Patch: \pullrequest{\fluxml}{\flux}{372} {\small -- reviewed by \mikeinnes}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{372} \\
       {\small
       restrict argument type of \mintinline{julia}{Dense}, initialize test cases for \mintinline{julia}{layers/basic.jl}
       }
-    \item Patch: \pullrequest{\fluxml}{\flux}{371} {\small -- reviewed by \mikeinnes}\\
+    \item Patch: \pullrequest{\fluxml}{\flux}{371} \\
       {\small
       add support for \textsf{$\approx$} and fix dispatch bug on \textsf{$==$}
       }
 \end{itemize}
-It's worth noting that I got my bachelor's degree as a philosophy student, this experience makes me a good candidate to think about the future of \images{} ecosystem from a more generic and broader view in a reflective and skeptical manner -- I have good feelings about what needs improvement and what doesn't. The issues I authored can prove this:
+It's worth noting that I got my bachelor's degree as a philosophy student, this experience makes me a good candidate to think about the future of \images{} ecosystem from a more generic and broader view in a reflective and skeptical manner -- I have good feelings about what needs improvement and what doesn't. The issues I authored can help prove this:
 \begin{itemize}
   \item \issue{\juliaimages}{\images}{792} -- reduce \images{} dependency complexity
   \item \issue{\juliaimages}{\images}{790} -- Towards consistent style, part 2: a documentation guide
@@ -73,7 +73,7 @@ It's worth noting that I got my bachelor's degree as a philosophy student, this 
         {\small
         5000 lines of markdown user\&admin documentation is written by myself.
         }
-      \item \textit{De facto} maintainer of the deep learning servers of the School of Mathematical Sciences, and that of a laboratory in Computer Sciences Department;
+      \item \textit{De facto} maintainer of deep learning servers of Math school, and that of a laboratory in CS department;
       \item Proudly created and maintained the \href{http://math.ecnu.edu.cn/~fli/}{homepage} of my supervisor.
       \item Head teaching assistant of courses: ``\href{http://math.ecnu.edu.cn/~fli/Teaching/DeepLearning/Fall2018/index.html}{Deep Learning and Action (Fall 2018)}''  and ``\href{http://math.ecnu.edu.cn/~fli/Teaching/DigitalImageProcessing/Spring2019/index.html}{Digital Image Processing (Spring 2019)}''.
   \end{itemize}
